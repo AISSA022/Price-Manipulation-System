@@ -1,0 +1,237 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markets|Commodity Monopolist</title>
+    <link rel="icon" href="../images/LOGO.ico" type="image/x-icon ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/market.css">
+</head>
+
+<body>
+    <div class="all">
+        <div class="head">
+
+            <div class="logo" style="margin-right: 800px;"><img src="../images/LOGO.ico" alt="LOGO" width="50px"
+                    height="40px">
+                <div class="bar"><button id="bar" onclick="show()"><i class="fa fa-bars"></i></button></div>
+            </div>
+
+
+            <div class="menue2">
+                <div><a href="../html/p1.html"><i class="fa fa-home"></i> Home</a></div>
+                <div class="m"><a href="../html/aboutus.html">About Us</a></div>
+                <div class="m"><a href="../html/contact.html">Contact Us</a></div>
+                <div class="m"><a href="../html/signin.html">SIGN IN</a></div>
+
+            </div>
+
+            <div class="menue">
+                <div class="h1" style="display: flex;flex-direction: row;">
+                    <div><a href="../html/p1.html"><i class="fa fa-home"></i> Home</a></div>
+                    <div><a href="../html/aboutus.html">About Us</a></div>
+                </div>
+                <div class="h2" style="display: flex;flex-direction: row;">
+                    <div class="m"><a href="../html/contact.html">Contact Us</a></div>
+                    <div class="m"><a href="../html/signin.html">SIGN IN</a></div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="center">
+            <div class="topmen">
+                <div class="marketname">
+                    <p>Market Name</p>
+                </div>
+            </div>
+            <div class="cen">
+                <nav id="sideNav">
+                    <ul>
+                        <li><a href="" id="garden">Price List<i class="fa-solid fa-hand-holding-dollar"></i></a></li>
+                        <li style="margin-top: 3px;"><a href="../html/Report.html" id="garden"
+                                style="font-size: 15px;padding-right: 5px">Report a Problem<i
+                                    class="fa-solid fa-hand-holding-dollar"></i></a></li>
+
+                    </ul>
+                </nav>
+
+                <div class="products">
+                    <div class="titl">
+                        <div class="myp"> My Products</div>
+                        <div class="search-box">
+                            <button class="btn-search"><i class="fa fa-search"></i></button>
+                            <input type="search" id="search1" class="input-search" placeholder="Type to Search...">
+                        </div>
+                    </div>
+                    <div class="product-list" id="product-list">
+                        <div class="prod">
+                            <img src="../images/LOGO.ico" alt="productimage">
+                            <div class="product-body">
+                                <h4 class="product-title">product 1</h4>
+                                <h5 style="color: grey;">Price</h5>
+                            </div>
+                        </div>
+                        <div class="prod">
+                            <img src="../images/LOGO.ico" alt="productimage">
+                            <div class="product-body">
+                                <h4 class="product-title">product 2</h4>
+                                <h5 style="color: grey;">Price</h5>
+                            </div>
+                        </div>
+                        <div class="prod">
+                            <img src="../images/LOGO.ico" alt="productimage">
+                            <div class="product-body">
+                                <h4 class="product-title">product 3</h4>
+                                <h5 style="color: grey;">Price</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+            <div id="prod-dis">
+                <div class="product-dis">
+                    <span class="closebtn4">&times;</span>
+                    <h1 id="expanded-product-title" style="text-align: center;">Product Name</h2>
+                        <h3 id="expanded-product-dis">Product description</h5>
+                            <h4>Price</h5>
+                                <div>
+                                    <button id="edit">Edit <i class="fa-solid fa-pencil"></i></button>
+                                </div>
+                </div>
+            </div>
+            <button class="addproduct">Add Product</button>
+            <div id="modal" class="hide-modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h3 style="margin-bottom: 15px;">New Product </h3>
+
+                    <label for="product-title" style="margin-bottom: 15px;">Product
+                        Name</label>
+                    <input type="text" name="product-title" id="product-t"
+                        style="margin-bottom: 15px;border: 1px solid #006938; border-radius: 5px;text-align: center; width: 100%; padding: 5px;"
+                        placeholder="Enter The Name Of The Product" required>
+
+                    <label for="product-img" style="margin-bottom: 15px;">Choose Product cover</label>
+                    <input type="file" onchange="readURL(this);"
+                        style="margin-bottom: 15px;border: 1px solid #006938; border-radius: 5px;text-align: center; width: 100%; padding: 5px;">
+
+                    <label style="margin-bottom: 15px;">Product Price</label>
+                    <input id="proprice"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                        type="text"
+                        style="margin-bottom: 15px;border: 1px solid #006938; border-radius: 5px;text-align: center; width: 100%; padding: 5px;"
+                        placeholder="Enter The Price Of The Product" required>
+
+                    <label style="margin-bottom: 15px;">Product Description</label>
+                    <input type="text"
+                        style="margin-bottom: 15px;height: 200px;border: 1px solid #006938; border-radius: 5px;text-align: center; width: 100%; padding: 5px;"
+                        placeholder="..." required>
+
+                    <button id="add-product" type="submit" name="add-product"
+                        style="margin: 10px;background-color: #006938;padding: 5px;color: white;text-align: center; border: none;border-radius: 5px; cursor: pointer;">Add!</button>
+                </div>
+            </div>
+            <button class="deleteproduct">Delete Product</button>
+            <div id="modal2">
+                <div class="modal-content2">
+                    <span class="close-btn2">&times;</span>
+                    <h1 style="margin-bottom: 15px;">Delete Product </h3>
+                        <label for="product-title" style="margin-bottom: 15px;">Product
+                            Name</label>
+                        <input type="text" name="product-title" id="productd"
+                            style="margin-bottom: 15px;border: 1px solid #006938; border-radius: 5px;text-align: center; width: 100%; padding: 5px;"
+                            placeholder="Enter The Name Of The Product" required>
+                        <button id="delete">DELETE</button>
+
+                </div>
+            </div>
+            <div id="alert1">
+                <div class="alert-dis">
+                    <span class="collapse-btn3">&times;</span>
+                    <h1 style="text-align: center;margin-top: 100px; color: black;"> You Have Enter This Product
+                        Before</h1>
+
+                    <button id="close">OK</button>
+                </div>
+            </div>
+            <div id="alert">
+                <div class="alert-dis">
+                    <span class="collapse-btn6">&times;</span>
+                    <h1 style="text-align: center;margin-top: 100px; color: black;"> Please check the name of the
+                        product</h1>
+
+                    <button id="close">OK</button>
+                </div>
+
+
+            </div>
+        </div>
+            <div class="footer">
+                <div class="upfooter">
+                    <div class="contactus">
+                        <div>
+                            <h1>Contact Us</h1>
+                            <span><i class="fa fa-mobile"></i><b>Hotline:</b> 1739</span>
+                            <span><i class="fa fa-phone"></i>000961-1-98938742</span>
+                            <span><i class="fa fa-envelope"></i>Commoditymonopolist@economy.lb</span>
+
+                        </div>
+                    </div>
+
+                    <div class="rightfooter">
+                        <ul class="lifooter">
+                            <div style="display: flex;flex-direction: row;">
+                                <div>
+                                    <li><a href="../html/aboutus.html">About us</a></li>
+                                </div>
+                                <div>
+                                    <li><a href="../html/feedbakc.html">Feedback</a></li>
+                                </div>
+                            </div>
+                            <div style="display: flex;flex-direction: row;">
+                                <div>
+                                    <li style="margin-right: 30px;text-decoration: none;color: whitesmoke;">Privacy
+                                    </li>
+                                </div>
+
+                            </div>
+                            <div>
+                                <li style="color: whitesmoke;">&COPY; 2022 Commodity Monopolist</li>
+                            </div>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="downfooter">
+
+                    <div class="icons">
+
+                        <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <script src="../javascript/jquery-3.6.0.min.js"></script>
+            <script src="../javascript/all.js"></script>
+</body>
+
+</html> -->
